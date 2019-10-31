@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Bills = sequelize.define("Bills", {
+  var Percents = sequelize.define("Percents", {
     source: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -17,5 +17,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return Bills;
+  return Percents;
 };
