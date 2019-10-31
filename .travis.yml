@@ -8,4 +8,8 @@ cache:
     - node_modules
 before_install:
   - mysql -e 'CREATE DATABASE testdb;'
+<<<<<<< HEAD
 dist: trusty
+=======
+dist: trusty
+>>>>>>> master
