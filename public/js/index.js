@@ -65,21 +65,25 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    email: $("#email").val().trim(),
+    password: $("#password").val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  $.ajax({url: "/", method: "POST"}).then(function(response){
+    console.log(response);
+  })
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
+  // if (!(example.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  // API.saveExample(example).then(function() {
+  //   refreshExamples();
+  // });
+
+  // $exampleText.val("");
+  // $exampleDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -95,5 +99,5 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+// $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
