@@ -1,3 +1,41 @@
-.list-group-item {
-  line-height: 2.5;
+.home {
+
 }
+
+.indexleft {
+  width: 40%;
+  background-color: #0c53a9;
+  float: left;
+}
+
+.homelogo {
+  padding: 30px;
+}
+
+.userinfo{
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  padding: 60px;
+  width: 50%;
+}
+
+.login {
+  font-family: "Prague";
+  color: white;
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+
+.signup {
+  padding: 66px;
+  color: white;
+}
+
+.indexright {
+  float: right;
+  width: 60%;
+}
+
