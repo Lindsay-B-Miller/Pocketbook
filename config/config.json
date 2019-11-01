@@ -4,7 +4,10 @@
     "password": "s00thinG",
     "database": "exampledb",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
   },
   "test": {
     "username": "root",
