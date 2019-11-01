@@ -23,4 +23,41 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  //Get all income
+  app.get("/api/income", function(req, res) {
+    db.Income.findAll({}).then(function(dbIncome) {
+      res.json(dbIncome);
+    });
+  });
+
+  //Display income
+  app.post("/api/income", function(req, res) {
+    db.Income.create(req.body).then(function(dbIncome) {
+      res.json(dbIncome);
+    });
+  });
+
+  //Get all bills
+  app.get("/api/bills", function(req, res) {
+    db.Bills.findAll({}).then(function(dbBills) {
+      res.json(dbBills);
+    });
+  });
+
+  //Display bills
+  app.post("/api/bills", function(req, res) {
+    db.Bills.create(req.body).then(function(dbBills) {
+      res.json(dbBills);
+    });
+  });
+
+  //Get all percents
+  app.get("/api/percents", function(req, res) {
+    db.Percents.findAll({}).then(function(dbPercents) {
+      res.json(dbPercents);
+    });
+  });
+
+  //Update an example app.put
 };
