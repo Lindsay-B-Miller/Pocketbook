@@ -17,5 +17,13 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Bills.associate = function(models) {
+    Bills.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Bills;
 };

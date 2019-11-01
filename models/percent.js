@@ -17,5 +17,13 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Percents.associate = function(models) {
+    Percents.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Percents;
 };
