@@ -1,5 +1,6 @@
 .home {
-
+  font-family: "Prague";
+  background-color: #0c53a9;
 }
 
 .indexleft {
@@ -12,30 +13,58 @@
   padding: 30px;
 }
 
+.logoImage {
+  width: 100%;
+  max-width: 500px;
+}
+
 .userinfo{
   border-style: solid;
   border-width: 5px;
   border-radius: 25px;
   border-color: white;
   color: white;
-  padding: 60px;
-  width: 50%;
+  padding: 15px;
+  width: 80%;
 }
 
 .login {
   font-family: "Prague";
   color: white;
   font-size: 32px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+.userInput {
+
 }
 
 .signup {
-  padding: 66px;
+  /* padding: 66px; */
   color: white;
 }
 
 .indexright {
   float: right;
   width: 60%;
+}
+
+.fillerImage {
+  width: 100%;
+  max-width: 1000px;
+  height: 610px;
+}
+
+.underPicture {
+  /* margin-top: 70px; */
+  text-align: center;
+  background-color: #0c53a9;
+  color: white;
+}
+
+.copyright {
+  border: 5px white solid;
+  width: 30%;
+  border-radius: 25px;
+  margin-left: 250px;
 }
 
