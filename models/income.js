@@ -18,12 +18,12 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Income.associate = function(models) {
-    Income.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Income.associate = function(models) {
+  //   Income.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
   return Income;
 };
