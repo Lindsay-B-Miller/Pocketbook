@@ -15,7 +15,9 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 // For Passport
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
@@ -32,7 +34,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app, passport);
 //load passport strategies
-require('./config/passport/passport.js')(passport, db.user);
+require("./config/passport/passport.js")(passport, db.user);
 
 var syncOptions = { force: false };
 

@@ -65,13 +65,17 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    email: $("#email").val().trim(),
-    password: $("#password").val().trim()
+    email: $("#email")
+      .val()
+      .trim(),
+    password: $("#password")
+      .val()
+      .trim()
   };
 
-  $.ajax({url: "/", method: "POST"}).then(function(response){
+  $.ajax({ url: "/", method: "POST" }).then(function(response) {
     console.log(response);
-  })
+  });
 
   // if (!(example.text && example.description)) {
   //   alert("You must enter an example text and description!");
