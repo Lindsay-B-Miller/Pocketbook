@@ -1,8 +1,6 @@
 {
   "development": {
     "username": "root",
-    "password": "bootcamp",
-    "database": "pocketbook",
     "host": "localhost",
     "dialect": "mysql"
   },
