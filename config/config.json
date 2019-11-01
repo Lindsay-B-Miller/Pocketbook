@@ -1,13 +1,8 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "bootcamp",
-    "database": "pocketbook",
-=======
     "password": "root",
-    "database": "exampledb",
->>>>>>> master
+    "database": "pocketbook",
     "host": "localhost",
     "dialect": "mysql"
   },
