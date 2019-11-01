@@ -10,7 +10,7 @@
 }
 
 .homelogo {
-  padding: 30px;
+  padding:  40px;
 }
 
 .logoImage {
@@ -24,7 +24,7 @@
   border-radius: 25px;
   border-color: white;
   color: white;
-  padding: 15px;
+  padding: 22px;
   width: 80%;
 }
 
@@ -32,7 +32,7 @@
   font-family: "Prague";
   color: white;
   font-size: 32px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .userInput {
 

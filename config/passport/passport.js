@@ -60,6 +60,7 @@ module.exports = function(passport, user) {
         id: id
       }
     }).then(function(user) {
+      console.log(user);
       if (user) {
         done(null, user);
       } else {
@@ -88,13 +89,14 @@ module.exports = function(passport, user) {
         var isValidPassword = function(userpass, password) {
           return bCrypt.compareSync(password, userpass);
         };
-
+        console.log(email);
         User.findOne({
           where: {
             email: email
           }
         })
           .then(function(user) {
+            console.log(user);
             if (!user) {
               return done(null, false, {
                 message: "Email does not exist"
@@ -107,7 +109,7 @@ module.exports = function(passport, user) {
               });
             }
 
-            var userinfo = user.get();
+            var userinfo = user;
             return done(null, userinfo);
           })
           .catch(function(err) {
