@@ -1,11 +1,6 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "root",
-    "database": "pocketbook",
-=======
->>>>>>> master
     "host": "localhost",
     "dialect": "mysql",
     "define": {

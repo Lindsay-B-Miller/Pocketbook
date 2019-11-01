@@ -11,13 +11,8 @@
   },
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-    "chart.js": "^2.9.1",
-    "dotenv": "^8.0.0",
-=======
     "bcrypt-nodejs": "0.0.3",
     "dotenv": "^8.2.0",
->>>>>>> master
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
