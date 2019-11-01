@@ -1,6 +1,3 @@
-.home {
-
-}
 
 .indexleft {
   width: 40%;
@@ -37,5 +34,61 @@
 .indexright {
   float: right;
   width: 60%;
+  padding-left: 10px;
 }
 
+.header {
+  height: 200px;
+  background-color: #0c53a9;
+}
+
+.dashcontain {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.dashleft {
+  padding: 40px;
+  float: left;
+  width: 50%;
+  height: 900px;
+  background-color: #0c53a9
+}
+
+.monthselect {
+  background-color: white;
+}
+
+.chart {
+  height: 750px;
+  background-color: white;
+}
+
+.chartdata {
+  padding: 40px;
+  width: 30%;
+  float: left;
+  background-color: #0c54a9;
+  height: 900px;
+}
+
+.datahead {
+  background-color: white;
+}
+
+.datainfo {
+  height: 750px;
+  background-color: white;
+}
+
+.optionstab {
+  border-style: solid;
+  border-width: 30px;
+  border-color: #0c53a9;
+  padding: 20px;
+  float: right;
+  width: 10%;
+  height: 900px;
+  background-color: white;
+}
