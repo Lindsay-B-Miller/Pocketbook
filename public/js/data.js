@@ -20,6 +20,7 @@ var API = {
     });
   },
   getIncome: function() {
+      console.log("get income function ran")
     return $.ajax({
       url: "api/income",
       type: "GET"
