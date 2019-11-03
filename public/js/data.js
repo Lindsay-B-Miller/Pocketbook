@@ -1,47 +1,50 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $submitIncome = $("#submitIncome");
+
+var $submitIncome = $("#submitIncome");
+var $incomeSource = $("#inputIncomeSource");
+var $incomeAmount = $("#inputIncomeAmount");
+var $incomeList = $("#income-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveIncome: function(income) {
+      console.log("saveIncome function ran")
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/income",
+      data: JSON.stringify(income)
     });
   },
-  getExamples: function() {
+  getIncome: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/income",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteIncome: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/income/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+var refreshIncome = function() {
+  API.getIncome().then(function(data) {
+    var $income = data.map(function(income) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .source(income.source)
+        .attr("href", "/income/" + example.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": income.id
         })
         .append($a);
 
@@ -54,8 +57,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $incomeList.empty();
+    $incomeList.append($income);
   });
 };
 
@@ -63,19 +66,28 @@ var refreshExamples = function() {
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
+  console.log("handleFormSubmit function ran")
 
-  var example = {
-    email: $("#email")
+  var income = {
+    source: $("#inputIncomeSource")
       .val()
       .trim(),
-    password: $("#password")
+    amount: $("#inputIncomeAmount")
       .val()
       .trim()
   };
 
-  $.ajax({ url: "/", method: "POST" }).then(function(response) {
-    console.log(response);
+  if (!(income.source && income.amount)) {
+    alert("You must enter an income source and amount.");
+    return;
+  }
+
+  API.saveIncome(income).then(function() {
+      refreshIncome();
   });
+  
+  $incomeSource.val("");
+  $incomeAmount.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -85,12 +97,13 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteIncome(idToDelete).then(function() {
+    refreshIncome();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 // $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$submitIncome.on("click", handleFormSubmit);
+$incomeList.on("click", ".delete", handleDeleteBtnClick);
 

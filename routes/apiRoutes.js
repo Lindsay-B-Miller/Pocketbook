@@ -38,6 +38,16 @@ module.exports = function(app) {
     });
   });
 
+  // Need a delete API income route
+  app.delete("/api/income/:id", function(req, res) {
+    db.Income.destroy({ where: { id: req.params.id } }).then(function(
+      dbIncome
+    ) {
+      res.json(dbIncome);
+    });
+  });
+
+
   //Get all bills
   app.get("/api/bills", function(req, res) {
     db.Bills.findAll({}).then(function(dbBills) {

@@ -6,12 +6,6 @@ module.exports = function(app, passport) {
     res.render("index");
   });
 
-
-  // // Why am I rendering two dashboards???
-  // app.get("/dashboard", function(req, res) {
-  //   res.render("dashboard");
-  // });
-
   // Load signup page and pass in an example by id
   app.get("/signup", function(req, res) {
     res.render("signup");
@@ -27,13 +21,16 @@ module.exports = function(app, passport) {
     })
   );
 
-    // Why am I rendering two dashboards???
   app.get("/dashboard", isLoggedIn, function(req, res) {
     res.render("dashboard");
   });
 
-  app.get("/data", isLoggedIn, function(req, res) {
-    res.render("data");
+  app.get("/dataDisplay", isLoggedIn, function(req, res) {
+   db.Income.findAll({}).then(function(dbIncome) {
+     res.render("dataDisplay", {
+       income: dbIncome
+     });
+   })
   });
   
 
