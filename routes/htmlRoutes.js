@@ -6,15 +6,19 @@ module.exports = function(app, passport) {
     res.render("index");
   });
 
-  app.get("/dashboard", function(req, res) {
-    res.render("dashboard");
-  });
+
+  // // Why am I rendering two dashboards???
+  // app.get("/dashboard", function(req, res) {
+  //   res.render("dashboard");
+  // });
 
   // Load signup page and pass in an example by id
   app.get("/signup", function(req, res) {
     res.render("signup");
   });
 
+
+// Get a failure message to appear
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
@@ -23,9 +27,15 @@ module.exports = function(app, passport) {
     })
   );
 
+    // Why am I rendering two dashboards???
   app.get("/dashboard", isLoggedIn, function(req, res) {
     res.render("dashboard");
   });
+
+  app.get("/data", isLoggedIn, function(req, res) {
+    res.render("data");
+  });
+  
 
   app.get("/logout", function(req, res) {
     req.session.destroy(function(err) {
@@ -56,4 +66,7 @@ module.exports = function(app, passport) {
 
     res.redirect("/signin");
   }
+
+
+
 };
