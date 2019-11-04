@@ -59,6 +59,7 @@ module.exports = function(app) {
 
   //Display bills
   app.post("/api/bills", function(req, res) {
+    req.body.userId = req.user[0].id
     db.Bills.create(req.body).then(function(dbBills) {
       res.json(dbBills);
     });
@@ -83,6 +84,7 @@ module.exports = function(app) {
 
     //Post Percents
     app.post("/api/percents", function(req, res) {
+      req.body.userId = req.user[0].id
       db.Percents.create(req.body).then(function(dbPercents) {
         res.json(dbPercents);
       });
