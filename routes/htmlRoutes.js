@@ -26,9 +26,9 @@ module.exports = function(app, passport) {
     res.render("dashboard");
   });
 
-  app.get("/dataDisplay", isLoggedIn, function(req, res) {
+  app.get("/income", isLoggedIn, function(req, res) {
    db.Income.findAll({}).then(function(dbIncome) {
-     res.render("dataDisplay", {
+     res.render("income", {
        income: dbIncome
      });
    })
