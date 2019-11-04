@@ -1,8 +1,6 @@
 {
   "development": {
     "username": "root",
-    "password": "s00thinG",
-    "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql",
     "define": {

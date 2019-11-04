@@ -1,24 +1,35 @@
-<div class="container" id="inputPB" >
-        <!-- Income -->
-        <br>
-        <div class="row">
-            <div class="col">
-                <h2>Add Your Current Income</h2>
-            </div>
+<div class="container" id="inputPB">
+    <!-- Income -->
+    <br>
+    <div class="row">
+        <div class="col">
+            <h2>Add Your Current Income</h2>
         </div>
-        <div class="row">
-            <div class="col">
-                <label>Income Amount</label><br />
-                <input type="number" />
-                <br><br>
-                <label>Income Source</label><br />
-                <input type="text" />
-                <br>
-                <br>
-                <h5>Have another source of income?</h5>
-                <button type="button" class="btn btn-white">Add it here</button>
-            </div>
-        </div>
-        <br>
-        <br>
     </div>
+    <div class="row">
+        <div class="col">
+            <label>Income Amount</label><br />
+            <input type="number" />
+            <br><br>
+            <label>Income Source</label><br />
+            <input type="text" />
+            <br>
+            <br>
+            <h5>Have another source of income?</h5>
+            <button type="button" class="btn btn-white">Add it here</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h3>Income:</h3>
+    <ul id="income-list" class="list-group">
+        {{#each income}}
+        <li data-id="{{this.id}}" class="list-group-item">
+            {{source}}
+            {{amount}}
+            <button class="btn btn-danger float-right delete">ｘ</button>
+        </li>
+        {{/each}}
+    </ul>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</div>
