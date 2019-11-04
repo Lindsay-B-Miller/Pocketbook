@@ -1,103 +1,113 @@
 <div class="header">
-    <div class="homelogo" style= "text-align: center;">
+  <div class="homelogo" style="text-align: center;">
     <img src="/img/pocketbooklogo.png" style="height: 140px;">
     <div class="profileicon">
       <div class="dropdown">
-    <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-        <a href="#" class="dropdown-item">Profile</a>
-        <a href="#" class="dropdown-item">Preferences</a>
-        <a href="#" class="dropdown-item">Sign Out</a>
+        <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a href="#" class="dropdown-item">Profile</a>
+          <a href="#" class="dropdown-item">Preferences</a>
+          <a href="#" class="dropdown-item">Sign Out</a>
+        </div>
+      </div>
     </div>
-</div>
-    </div>
 
-<div class="welcome">
-    <h1>Welcome Back, "user".</h1>
-</div>
-
-
-<div class="dashcontain">
-
-    <div class="dashleft">
-        
-    <div class="monthselect" style="text-align: center;">
-        <h1>October</h1>
+    <div class="welcome">
+      <h1>Welcome Back, "user".</h1>
     </div>
 
 
-    <div class="chart">
-        <div class="container">
-        <canvas id="myChart" width="630" height="630"></canvas>
+    <div class="dashcontain">
+
+      <div class="dashleft">
+
+        <div class="monthselect" style="text-align: center;">
+          <h1>October</h1>
+        </div>
+
+
+        <div class="chart">
+          <div class="container">
+            <canvas id="myChart" width="630" height="630"></canvas>
+          </div>
+
+
+          <script>
+            let myChart = document.getElementById('myChart').getContext('2d');
+
+            let massPopChart = new Chart(myChart, {
+              type: 'pie', // bar, pie, etc.
+              data: {
+                // X data. 
+                labels: ['Rent', 'Auto', 'Groceries', 'Internet', 'Subscriptions', 'Dog'],
+                datasets: [{
+                  label: 'Spending',
+                  data: [
+                    617594,
+                    181045,
+                    153060,
+                    106519,
+                    105162,
+                    95072
+                  ],
+                  // Background color for induvidual labels.
+                  backgroundColor: [
+                    'rgba(72, 201, 176, 0.6)',
+                    'rgba(192, 57, 43, 0.6)',
+                    'rgba(142, 68, 173, 0.6)',
+                    'rgba(244, 208, 63, 0.6)',
+                    'rgba(220, 118, 51, 0.6)',
+                    'rgba(52, 73, 94, 0.6)',
+                  ],
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+              },
+              legend: {
+                display: true,
+                position: 'right',
+                labels: {
+                  fontColor: '#000',
+                }
+              },
+
+            });
+          </script>
+        </div>
+
       </div>
 
+      <div class="chartdata">
 
-      <script>
-        let myChart = document.getElementById('myChart').getContext('2d');
+        <div class="datahead" style="text-align: center;">
+          <h1>Data</h1>
+        </div>
 
-        let massPopChart = new Chart(myChart, {
-          type: 'pie', // bar, pie, etc.
-          data:{
-            // X data. 
-            labels:['Rent', 'Auto', 'Groceries', 'Internet', 'Subscriptions', 'Dog'],
-            datasets:[{
-            label: 'Spending',
-            data: [
-              617594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
-            ],
-            // Background color for induvidual labels.
-            backgroundColor:[
-              'rgba(72, 201, 176, 0.6)',
-              'rgba(192, 57, 43, 0.6)',
-              'rgba(142, 68, 173, 0.6)',
-              'rgba(244, 208, 63, 0.6)',
-              'rgba(220, 118, 51, 0.6)',
-              'rgba(52, 73, 94, 0.6)',
-            ],
-            }]
-        },
-          options:{
-              responsive: true,
-              maintainAspectRatio: false,
-          },
-          legend: {
-            display: true,
-            position:'right',
-            labels: {
-              fontColor:'#000',
-            }
-          },
-          
-        });
-    </script>
-    </div>
 
-    </div>
+        <div class="datainfo">
+          <h3>Income:</h3>
+          <ul id="income-list" class="list-group">
+            {{#each income}}
+            <li data-id="{{this.id}}" class="list-group-item">
+              {{source}}
+              {{amount}}
+              <button class="btn btn-danger float-right delete">ｘ</button>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
 
-    <div class="chartdata">
+      </div>
 
-    <div class="datahead" style="text-align: center;">
-        <h1>Data</h1>
-    </div>
-
-    
-    <div class="datainfo">
-        
-    </div>
-
-    </div>
-
-    <div class="optionstab" style="text-align: center;">
+      <div class="optionstab" style="text-align: center;">
 
         <div class="incomeicon">
-          <a href = "income">
-          <input type="image" src="/img/INCOME.jpg" style="height: 130px; width: 130px;">
-          <p>Income</p>
+          <a href="income">
+            <input type="image" src="/img/INCOME.jpg" style="height: 130px; width: 130px;">
+            <p>Income</p>
           </a>
         </div>
 
@@ -105,11 +115,13 @@
 
 
         <div class="billsicon">
-          <a href = "bills">
-          <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 160px;">
-          <p>Bills</p>
+          <a href="bills">
+            <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 160px;">
+            <p>Bills</p>
           </a>
         </div>
+      </div>
+
     </div>
 
-</div>
+    <script src="/js/data.js"></script>
