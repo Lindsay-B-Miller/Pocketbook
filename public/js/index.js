@@ -91,18 +91,6 @@ var handleFormSubmit = function(event) {
   $.ajax({ url: "/", method: "POST" }).then(function(response) {
     console.log(response);
   });
-
-  // if (!(example.text && example.description)) {
-  //   alert("You must enter an example text and description!");
-  //   return;
-  // }
-
-  // API.saveExample(example).then(function() {
-  //   refreshExamples();
-  // });
-
-  // $exampleText.val("");
-  // $exampleDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -121,3 +109,4 @@ var handleDeleteBtnClick = function() {
 
 // $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
