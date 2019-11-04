@@ -1,48 +1,78 @@
-.indexleft {
-  width: 40%;
+.home {
+
+  font-family: "Prague";
   background-color: #0c53a9;
+}
+
+.indexleft {
+  /* padding: 5px; */
+  width: 40%;
   float: left;
+  background-color: #0c53a9;
 }
 
 .homelogo {
-  padding: 30px;
+  padding: 40px;
 }
 
-.userinfo{
+.logoImage {
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  padding: 22px;
+  width: 80%;
+}
+
+.userinfo {
   border-style: solid;
   border-width: 5px;
   border-radius: 25px;
   border-color: white;
   color: white;
-  padding: 60px;
-  width: 50%;
+  padding: 10px;
+  width: 80%;
 }
 
 .login {
   font-family: "Prague";
   color: white;
   font-size: 32px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 
 .signup {
-  padding: 66px;
+  padding: 57px;
   color: white;
 }
 
 .indexright {
   float: right;
   width: 60%;
-  padding-left: 10px;
+  /* padding-left: 10px; */
+  /* width: 60%; */
 }
 
-.header {
-  height: 180px;
+.fillerImage {
+  width: 100%;
+  max-width: 1000px;
+  height: 610px;
+}
+
+.underPicture {
+  /* margin-top: 70px; */
+  text-align: center;
   background-color: #0c53a9;
+  color: white;
 }
 
-.homelogo {
+.copyright {
+  border: 5px white solid;
+  width: 30%;
+  border-radius: 25px;
+  margin-left: 250px;
 }
+
+.homelogo {}
 
 .profileicon {
   padding-top: 90px;
@@ -136,3 +166,54 @@
 .billsicon {
   padding-right: 10px;
 }
+
+/* income page */
+html,
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  background: #0c53a9;
+  text-align: center;
+  color: black;
+}
+
+#inputPB {
+  margin-top: 50px;
+  border: 5px solid white;
+  border-radius: 25px;
+  /* float: left;
+}
+
+label {
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.btn-white {
+  background: white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+
+  width: 50%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid white;
+  text-align: center;
+  color: white;
+} 
