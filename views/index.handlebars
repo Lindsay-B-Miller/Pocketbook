@@ -3,7 +3,7 @@
   <div class="indexleft">
 
     <div class="homelogo" style="text-align: center;">
-      <img src="/img/pocketbooklogo.png">
+      <img class="logoImage" src="/img/pocketbooklogo.png">
     </div>
 
     <div class="userinfo" style="margin: 0 auto;">
@@ -12,7 +12,7 @@
           <p>Login</p>
         </div>
 
-        <p>Email :</p>
+        <h5 class="userInput">Email :</h5>
         <div class="input-group mb-3">
           <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"
             name="email">
@@ -20,13 +20,19 @@
 
         <br>
 
-        <p>Password :</p>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" aria-label="Recipient's username" name="password"
-            aria-describedby="button-addon2">
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-group" id="show_hide_password">
+            <input type="password" class="form-control" placeholder="User's password" id="myInput" aria-label="Users's password" name="password">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-eye-slash" aria-hidden="false"></i></button>
+            </div>
+          </div>
         </div>
 
-        <br>
+
+
+        <br><br>
 
         <div class="login" style="text-align: center;">
           <button id="submit" type="submit" class="btn btn-light">Sign In</button>
@@ -40,7 +46,7 @@
 
       <p>Not already a member?</p>
 
-      <a href = "/signup"><button type="button" class="btn btn-light">Signup</button></a>
+      <a href="/signup"><button type="button" class="btn btn-light">Sign Up</button></a>
 
     </div>
 
@@ -51,15 +57,20 @@
     <div class="rightimg">
 
 
-      <img src="/img/INDEXRIGHT.jpg" style="height: 800px; width: 1142px;">
+      <img class="fillerImage" src="/img/INDEXRIGHT.jpg">
     </div>
 
-
+    <div class="underPicture">
+      <br>
+      <br>
+      <br>
+      <p class="copyright">© 2019 Pocketbook</p>
+      <br>
+      <br>
+    <br>
+    </div>
 
   </div>
 
 </div>
-</div>
 
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
