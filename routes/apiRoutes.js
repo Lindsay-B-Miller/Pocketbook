@@ -98,12 +98,12 @@ module.exports = function(app) {
       });
     });
 
-// Delete API bills 
-  app.delete("/api/bills/:id", function(req, res) {
-    db.Bills.destroy({ where: { id: req.params.id } }).then(function(
-      dbBills
+// Delete API percents 
+  app.delete("/api/percents/:id", function(req, res) {
+    db.Percents.destroy({ where: { id: req.params.id } }).then(function(
+      dbPercents
     ) {
-      res.json(dbBills);
+      res.json(dbPercents);
     });
   });
 

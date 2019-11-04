@@ -3,7 +3,7 @@ var $submitPercent = $("#submitPercent");
 var $submitPercent = $("#submitPercent");
 var $percentSource = $("#inputPercentSource");
 var $percentAmount = $("#inputPercentAmount");
-var $percentList = $("#percent-list");
+var $percentList = $("#percents-list");
 
 // The API object contains methods for each kind of request we'll make
 var percentAPI = {
