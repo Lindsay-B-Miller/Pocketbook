@@ -22,6 +22,7 @@ module.exports = function(app, passport) {
   );
 
   app.get("/dashboard", isLoggedIn, function(req, res) {
+    console.log(isLoggedIn)
     res.render("dashboard");
   });
 

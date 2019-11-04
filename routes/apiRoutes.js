@@ -33,6 +33,8 @@ module.exports = function(app) {
 
   //Display income
   app.post("/api/income", function(req, res) {
+    console.log(req.user[0].id);
+    req.body.userId = req.user[0].id
     db.Income.create(req.body).then(function(dbIncome) {
       res.json(dbIncome);
     });

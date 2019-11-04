@@ -1,6 +1,5 @@
 // Get references to page elements
 var $submitIncome = $("#submitIncome");
-
 var $submitIncome = $("#submitIncome");
 var $incomeSource = $("#inputIncomeSource");
 var $incomeAmount = $("#inputIncomeAmount");
@@ -36,32 +35,9 @@ var API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshIncome = function() {
-  API.getIncome().then(function(data) {
-    var $income = data.map(function(income) {
-      var $a = $("<a>")
-        .source(income.source)
-        .attr("href", "/income/" + example.id);
+  location.reload();
+    }
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": income.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $incomeList.empty();
-    $incomeList.append($income);
-  });
-};
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
