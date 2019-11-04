@@ -64,6 +64,16 @@ module.exports = function(app) {
     });
   });
 
+    // Need a delete API bills route
+    app.delete("/api/bills/:id", function(req, res) {
+      db.Bills.destroy({ where: { id: req.params.id } }).then(function(
+        dbBills
+      ) {
+        res.json(dbBills);
+      });
+    });
+  
+
   //Get all percents
   app.get("/api/percents", function(req, res) {
     db.Percents.findAll({}).then(function(dbPercents) {
@@ -71,5 +81,19 @@ module.exports = function(app) {
     });
   });
 
-  //Update an example app.put
+    //Post Percents
+    app.post("/api/percents", function(req, res) {
+      db.Percents.create(req.body).then(function(dbPercents) {
+        res.json(dbPercents);
+      });
+    });
+
+    // Need a delete API bills route
+    app.delete("/api/percents/:id", function(req, res) {
+      db.Percents.destroy({ where: { id: req.params.id } }).then(function(
+        dbPercents
+      ) {
+        res.json(dbPercents);
+      });
+    });
 };
