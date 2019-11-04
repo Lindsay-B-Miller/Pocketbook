@@ -14,7 +14,9 @@
     </div>
 
     <div class="welcome">
-      <h1>Welcome Back, "user".</h1>
+      {{#each user}}
+      <h1>Welcome Back, {{firstname}}</h1>
+      {{/each}}
     </div>
 
 
@@ -102,6 +104,7 @@
           </ul>
 
           <h3>Total Income: </h3>
+
 
         </div>
 

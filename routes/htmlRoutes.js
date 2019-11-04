@@ -21,11 +21,18 @@ module.exports = function (app, passport) {
   );
 
   app.get("/dashboard", isLoggedIn, function (req, res) {
-    db.Income.findAll({
-      where: { userId: req.user[0].id }
-    }).then(function (dbIncome) {
+    // db.Income.findAll({
+    //   where: { userId: req.user[0].id }
+    // }).then(function (dbIncome) {
+    //   res.render("dashboard", {
+    //     income: dbIncome
+    //   });
+    // });
+    db.user.findAll({
+      where: { id: req.user[0].id }
+    }).then(function (dbUser) {
       res.render("dashboard", {
-        income: dbIncome
+        user: dbUser
       });
     });
   });
