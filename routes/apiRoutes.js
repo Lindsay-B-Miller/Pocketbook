@@ -33,10 +33,22 @@ module.exports = function(app) {
 
   //Display income
   app.post("/api/income", function(req, res) {
+    console.log(req.user[0].id);
+    req.body.userId = req.user[0].id
     db.Income.create(req.body).then(function(dbIncome) {
       res.json(dbIncome);
     });
   });
+
+  // Need a delete API income route
+  app.delete("/api/income/:id", function(req, res) {
+    db.Income.destroy({ where: { id: req.params.id } }).then(function(
+      dbIncome
+    ) {
+      res.json(dbIncome);
+    });
+  });
+
 
   //Get all bills
   app.get("/api/bills", function(req, res) {

@@ -3,42 +3,16 @@ var db = require("../models");
 module.exports = function(app, passport) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
-
-  app.get("/dashboard", function(req, res) {
-    db.Example.findAll({}).then(function(bills) {
-      res.render("dashboard", {
-        bills: bills
-      });
-    });
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+    res.render("index");
   });
 
   // Load signup page and pass in an example by id
   app.get("/signup", function(req, res) {
-    db.Example.findAll({}).then(function(dbExample) {
-      res.render("signup", {
-        example: dbExample
-      });
-    });
+    res.render("signup");
   });
 
+
+// Get a failure message to appear
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
@@ -48,8 +22,18 @@ module.exports = function(app, passport) {
   );
 
   app.get("/dashboard", isLoggedIn, function(req, res) {
+    console.log(isLoggedIn)
     res.render("dashboard");
   });
+
+  app.get("/income", isLoggedIn, function(req, res) {
+   db.Income.findAll({}).then(function(dbIncome) {
+     res.render("income", {
+       income: dbIncome
+     });
+   })
+  });
+  
 
   app.get("/logout", function(req, res) {
     req.session.destroy(function(err) {
@@ -74,10 +58,14 @@ module.exports = function(app, passport) {
   });
 
   function isLoggedIn(req, res, next) {
+
     if (req.isAuthenticated()) {
       return next();
     }
 
     res.redirect("/signin");
   }
+
+
+
 };
