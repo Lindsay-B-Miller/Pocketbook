@@ -11,8 +11,7 @@ module.exports = function(app, passport) {
     res.render("signup");
   });
 
-
-// Get a failure message to appear
+  // Get a failure message to appear
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
@@ -22,18 +21,17 @@ module.exports = function(app, passport) {
   );
 
   app.get("/dashboard", isLoggedIn, function(req, res) {
-    console.log(isLoggedIn)
+    console.log(isLoggedIn);
     res.render("dashboard");
   });
 
   app.get("/income", isLoggedIn, function(req, res) {
-   db.Income.findAll({}).then(function(dbIncome) {
-     res.render("income", {
-       income: dbIncome
-     });
-   })
+    db.Income.findAll({}).then(function(dbIncome) {
+      res.render("income", {
+        income: dbIncome
+      });
+    });
   });
-  
 
   app.get("/logout", function(req, res) {
     req.session.destroy(function(err) {
@@ -58,14 +56,10 @@ module.exports = function(app, passport) {
   });
 
   function isLoggedIn(req, res, next) {
-
     if (req.isAuthenticated()) {
       return next();
     }
 
     res.redirect("/signin");
   }
-
-
-
 };
