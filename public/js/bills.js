@@ -1,40 +1,40 @@
 // Get references to page elements
-var $submitIncome = $("#submitIncome");
-var $submitIncome = $("#submitIncome");
-var $incomeSource = $("#inputIncomeSource");
-var $incomeAmount = $("#inputIncomeAmount");
-var $incomeList = $("#income-list");
+var $submitBill = $("#submitBill");
+var $submitBill = $("#submitBill");
+var $billSource = $("#inputBillSource");
+var $billAmount = $("#inputBillAmount");
+var $billList = $("#bills-list");
 
 // The API object contains methods for each kind of request we'll make
-var incomeAPI = {
-  saveIncome: function(income) {
-      console.log("saveIncome function ran")
+var billsAPI = {
+  saveBill: function(bill) {
+      console.log("saveBill function ran")
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/income",
-      data: JSON.stringify(income)
+      url: "api/bills",
+      data: JSON.stringify(bill)
     });
   },
-  getIncome: function() {
-      console.log("get income function ran")
+  getBill: function() {
+      console.log("get bill function ran")
     return $.ajax({
-      url: "api/income",
+      url: "api/bills",
       type: "GET"
     });
   },
-  deleteIncome: function(id) {
+  deleteBill: function(id) {
     return $.ajax({
-      url: "api/income/" + id,
+      url: "api/bills/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshIncome = function() {
+var refreshBills = function() {
   location.reload();
     }
 
@@ -45,26 +45,26 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
   console.log("handleFormSubmit function ran")
 
-  var income = {
-    source: $("#inputIncomeSource")
+  var bill = {
+    source: $("#inputBillSource")
       .val()
       .trim(),
-    amount: $("#inputIncomeAmount")
+    amount: $("#inputBillAmount")
       .val()
       .trim()
   };
 
-  if (!(income.source && income.amount)) {
-    alert("You must enter an income source and amount.");
+  if (!(bill.source && bill.amount)) {
+    alert("You must enter a bill source and amount.");
     return;
   }
 
-  incomeAPI.saveIncome(income).then(function() {
-      refreshIncome();
+  billsAPI.saveBill(bill).then(function() {
+      refreshBills();
   });
   
-  $incomeSource.val("");
-  $incomeAmount.val("");
+  $billSource.val("");
+  $billAmount.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -74,13 +74,13 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  incomeAPI.deleteIncome(idToDelete).then(function() {
-    refreshIncome();
+  billsAPI.deleteBill(idToDelete).then(function() {
+    refreshBills();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 // $submitBtn.on("click", handleFormSubmit);
-$submitIncome.on("click", handleFormSubmit);
-$incomeList.on("click", ".delete", handleDeleteBtnClick);
+$submitBill.on("click", handleFormSubmit);
+$billList.on("click", ".delete", handleDeleteBtnClick);
 

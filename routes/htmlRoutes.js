@@ -33,6 +33,23 @@ module.exports = function(app, passport) {
     });
   });
 
+
+  app.get("/bills", isLoggedIn, function(req, res) {
+    db.Bills.findAll({}).then(function(dbBills) {
+      res.render("bills", {
+        bill: dbBills
+      });
+    });
+  });
+
+  app.get("/percents", isLoggedIn, function(req, res) {
+    db.Percents.findAll({}).then(function(dbPercents) {
+      res.render("percents", {
+        percent: dbPercents
+      });
+    });
+  });
+
   app.get("/logout", function(req, res) {
     req.session.destroy(function(err) {
       res.redirect("/");
@@ -60,6 +77,6 @@ module.exports = function(app, passport) {
       return next();
     }
 
-    res.redirect("/signin");
+    res.redirect("/");
   }
 };

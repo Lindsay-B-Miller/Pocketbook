@@ -1,40 +1,40 @@
 // Get references to page elements
-var $submitIncome = $("#submitIncome");
-var $submitIncome = $("#submitIncome");
-var $incomeSource = $("#inputIncomeSource");
-var $incomeAmount = $("#inputIncomeAmount");
-var $incomeList = $("#income-list");
+var $submitPercent = $("#submitPercent");
+var $submitPercent = $("#submitPercent");
+var $percentSource = $("#inputPercentSource");
+var $percentAmount = $("#inputPercentAmount");
+var $percentList = $("#percent-list");
 
 // The API object contains methods for each kind of request we'll make
-var incomeAPI = {
-  saveIncome: function(income) {
-      console.log("saveIncome function ran")
+var percentAPI = {
+  savePercent: function(percent) {
+      console.log("savePercent function ran")
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/income",
-      data: JSON.stringify(income)
+      url: "api/percents",
+      data: JSON.stringify(percent)
     });
   },
-  getIncome: function() {
-      console.log("get income function ran")
+  getPercent: function() {
+      console.log("get percent function ran")
     return $.ajax({
-      url: "api/income",
+      url: "api/percents",
       type: "GET"
     });
   },
-  deleteIncome: function(id) {
+  deletePercent: function(id) {
     return $.ajax({
-      url: "api/income/" + id,
+      url: "api/percents/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshIncome = function() {
+var refreshPercents = function() {
   location.reload();
     }
 
@@ -45,26 +45,26 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
   console.log("handleFormSubmit function ran")
 
-  var income = {
-    source: $("#inputIncomeSource")
+  var percent = {
+    source: $("#inputPercentSource")
       .val()
       .trim(),
-    amount: $("#inputIncomeAmount")
+    percent: $("#inputPercentPercent")
       .val()
       .trim()
   };
 
-  if (!(income.source && income.amount)) {
-    alert("You must enter an income source and amount.");
+  if (!(percent.source && percent.percent)) {
+    alert("You must enter a category and percent.");
     return;
   }
 
-  incomeAPI.saveIncome(income).then(function() {
-      refreshIncome();
+  percentAPI.savePercent(percent).then(function() {
+      refreshPercents();
   });
   
-  $incomeSource.val("");
-  $incomeAmount.val("");
+  $percentSource.val("");
+  $percentAmount.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -74,13 +74,13 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  incomeAPI.deleteIncome(idToDelete).then(function() {
-    refreshIncome();
+  percentAPI.deletePercent(idToDelete).then(function() {
+    refreshPercents();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 // $submitBtn.on("click", handleFormSubmit);
-$submitIncome.on("click", handleFormSubmit);
-$incomeList.on("click", ".delete", handleDeleteBtnClick);
+$submitPercent.on("click", handleFormSubmit);
+$percentList.on("click", ".delete", handleDeleteBtnClick);
 
