@@ -1,3 +1,7 @@
+.home {
+  font-family: "Prague";
+  background-color: #0c53a9;
+}
 
 .indexleft {
   width: 40%;
@@ -6,7 +10,12 @@
 }
 
 .homelogo {
-  padding: 30px;
+  padding:  40px;
+}
+
+.logoImage {
+  width: 100%;
+  max-width: 500px;
 }
 
 .userinfo{
@@ -15,8 +24,8 @@
   border-radius: 25px;
   border-color: white;
   color: white;
-  padding: 60px;
-  width: 50%;
+  padding: 22px;
+  width: 80%;
 }
 
 .login {
@@ -25,9 +34,12 @@
   font-size: 32px;
   padding-bottom: 20px;
 }
+.userInput {
+
+}
 
 .signup {
-  padding: 66px;
+  /* padding: 66px; */
   color: white;
 }
 
@@ -35,6 +47,26 @@
   float: right;
   width: 60%;
   padding-left: 10px;
+}
+
+.fillerImage {
+  width: 100%;
+  max-width: 1000px;
+  height: 610px;
+}
+
+.underPicture {
+  /* margin-top: 70px; */
+  text-align: center;
+  background-color: #0c53a9;
+  color: white;
+}
+
+.copyright {
+  border: 5px white solid;
+  width: 30%;
+  border-radius: 25px;
+  margin-left: 250px;
 }
 
 .header {
