@@ -1,13 +1,13 @@
 var db = require("../models");
 
-module.exports = function(app, passport) {
+module.exports = function (app, passport) {
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.render("index");
   });
 
   // Load signup page and pass in an example by id
-  app.get("/signup", function(req, res) {
+  app.get("/signup", function (req, res) {
     res.render("signup");
   });
 
@@ -20,13 +20,16 @@ module.exports = function(app, passport) {
     })
   );
 
-  app.get("/dashboard", isLoggedIn, function(req, res) {
-    console.log(isLoggedIn);
-    res.render("dashboard");
+  app.get("/dashboard", isLoggedIn, function (req, res) {
+    db.Income.findAll({}).then(function (dbIncome) {
+      res.render("dashboard", {
+        income: dbIncome
+      });
+    });
   });
 
-  app.get("/income", isLoggedIn, function(req, res) {
-    db.Income.findAll({}).then(function(dbIncome) {
+  app.get("/income", isLoggedIn, function (req, res) {
+    db.Income.findAll({}).then(function (dbIncome) {
       res.render("income", {
         income: dbIncome
       });
@@ -34,24 +37,24 @@ module.exports = function(app, passport) {
   });
 
 
-  app.get("/bills", isLoggedIn, function(req, res) {
-    db.Bills.findAll({}).then(function(dbBills) {
+  app.get("/bills", isLoggedIn, function (req, res) {
+    db.Bills.findAll({}).then(function (dbBills) {
       res.render("bills", {
         bill: dbBills
       });
     });
   });
 
-  app.get("/percents", isLoggedIn, function(req, res) {
-    db.Percents.findAll({}).then(function(dbPercents) {
+  app.get("/percents", isLoggedIn, function (req, res) {
+    db.Percents.findAll({}).then(function (dbPercents) {
       res.render("percents", {
         percent: dbPercents
       });
     });
   });
 
-  app.get("/logout", function(req, res) {
-    req.session.destroy(function(err) {
+  app.get("/logout", function (req, res) {
+    req.session.destroy(function (err) {
       res.redirect("/");
     });
   });
@@ -62,13 +65,13 @@ module.exports = function(app, passport) {
       successRedirect: "/dashboard",
       failureRedirect: "/"
     }),
-    function() {
+    function () {
       console.log("posted");
     }
   );
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 
