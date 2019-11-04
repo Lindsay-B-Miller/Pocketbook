@@ -11,6 +11,14 @@ module.exports = function(app, passport) {
     });
   });
 
+  app.get("/dashboard", function(req, res) {
+    db.Example.findAll({}).then(function(bills) {
+      res.render("dashboard", {
+        bills: bills
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(
