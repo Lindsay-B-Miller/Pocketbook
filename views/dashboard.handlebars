@@ -1,44 +1,103 @@
 <div class="header">
     <div class="homelogo" style= "text-align: center;">
-    <img src="/img/pocketbooklogo.png" style="height: 150px;">
+    <img src="/img/pocketbooklogo.png" style="height: 140px;">
+    <div class="profileicon">
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="#">Profile</a>
+    <a class="dropdown-item" href="#">Preferences</a>
+    <a class="dropdown-item" href="#">Sign Out</a>
   </div>
 </div>
+    </div>
 
-<br>
+<div class="welcome">
+    <h1>Welcome Back, "user".</h1>
+</div>
+
 
 <div class="dashcontain">
 
     <div class="dashleft">
         
-    <div class="monthselect">
+    <div class="monthselect" style="text-align: center;">
         <h1>October</h1>
     </div>
 
-    <br>
 
     <div class="chart">
-        <h1>Chart</h1>
+        <div class="container">
+        <canvas id="myChart" width="630" height="630"></canvas>
+      </div>
+
+
+      <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        let massPopChart = new Chart(myChart, {
+          type: 'pie', // bar, pie, etc.
+          data:{
+            // X data. 
+            labels:['Rent', 'Auto', 'Groceries', 'Internet', 'Subscriptions', 'Dog'],
+            datasets:[{
+            label: 'Spending',
+            data: [
+              617594,
+              181045,
+              153060,
+              106519,
+              105162,
+              95072
+            ],
+            // Background color for induvidual labels.
+            backgroundColor:[
+              'rgba(72, 201, 176, 0.6)',
+              'rgba(192, 57, 43, 0.6)',
+              'rgba(142, 68, 173, 0.6)',
+              'rgba(244, 208, 63, 0.6)',
+              'rgba(220, 118, 51, 0.6)',
+              'rgba(52, 73, 94, 0.6)',
+            ],
+            }]
+        },
+          options:{
+              responsive: true,
+              maintainAspectRatio: false,
+          }
+        });
+    </script>
     </div>
 
     </div>
 
     <div class="chartdata">
 
-    <div class="datahead">
+    <div class="datahead" style="text-align: center;">
         <h1>Data</h1>
     </div>
 
-    <br>
     
     <div class="datainfo">
-        <h1>Data info</h1>
+        
     </div>
 
     </div>
 
     <div class="optionstab">
-    
 
+        <div class="incomeicon">
+          <form action="income.handlebars">
+          <input type="image" src="/img/INCOME.jpg" style="height: 150px; width: 150px;">
+        </div>
+
+        <br>
+
+        <div class="billsicon">
+          <form action="bills.handlebars">
+          <input type="image" src="/img/BILLS.jpg" style="height: 150px; width: 160px;">
+        </div>
     </div>
 
 </div>

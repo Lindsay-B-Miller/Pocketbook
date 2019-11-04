@@ -38,57 +38,99 @@
 }
 
 .header {
-  height: 200px;
+  height: 180px;
   background-color: #0c53a9;
 }
 
-.dashcontain {
+.homelogo {
+}
+
+.profileicon {
+  padding-top: 90px;
+  float: right;
+}
+
+.welcome {
+  font-family: "Prague";
   padding-top: 20px;
+  padding-right: 30px;
+}
+
+.dashcontain {
   padding-bottom: 20px;
   padding-left: 20px;
 }
 
 .dashleft {
-  padding: 40px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-bottom: 40px;
   float: left;
-  width: 50%;
+  width: 55%;
   height: 900px;
-  background-color: #0c53a9
 }
 
 .monthselect {
-  background-color: white;
+  border-style: solid;
+  border-width: 20px;
+  border-color: #0c53a9;
+  font-family: "Prague";
+  color: white;
+  background-color: #0c53a9;
 }
 
 .chart {
+  padding: 40px;
   height: 750px;
   background-color: white;
+  border-style: solid;
+  border-top: none;
+  border-width: 20px;
+  border-color: #0c53a9;
 }
 
 .chartdata {
-  padding: 40px;
-  width: 30%;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  width: 35%;
   float: left;
-  background-color: #0c54a9;
   height: 900px;
 }
 
 .datahead {
-  background-color: white;
+  border-style: solid;
+  border-width: 20px;
+  border-color: #0c53a9;
+  font-family: "Prague";
+  color: white;
+  background-color: #0c53a9;
 }
 
 .datainfo {
   height: 750px;
   background-color: white;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-width: 20px;
+  border-color: #0c53a9;
 }
 
 .optionstab {
   border-style: solid;
-  border-width: 30px;
+  border-width: 5px;
   border-color: #0c53a9;
-  padding: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 16px;
   float: right;
-  width: 10%;
-  height: 900px;
+  width: 8%;
+  height: 870px;
   background-color: white;
+}
+
+.billsicon {
+  padding-right: 10px;
 }
