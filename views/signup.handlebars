@@ -1,23 +1,51 @@
-<!DOCTYPE html>
-<html>
- 
-<head>
-    <title></title>
-</head>
- 
-<body>
+    <div class="header">
+    <div class="homelogo" style= "text-align: center;">
+    <img src="/img/pocketbooklogo.png" style="height: 140px;">
+    <div class="profileicon">
+      <div class="dropdown">
+    <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <a href="#" class="dropdown-item">Profile</a>
+        <a href="#" class="dropdown-item">Preferences</a>
+        <a href="#" class="dropdown-item">Sign Out</a>
+    </div>
+</div>
+    </div>
+
+    <div class="break">
+    </div>
+
+    <div class="signupcontain" style="margin: 0 auto;">
+
+        <div class="signuphead">
+            <h1>Sign Up</h1>
+        </div>
+
+    <div class="signupdatacontain" style="margin: 0 auto;">
+
+        <div class="signupdata" style="text-align: left;">
     <form id="signup" name="signup" method="post" action="/signup">
-        <label for="email">Email Address</label>
+        <label for="email">Email Address : </label>
         <input class="text" name="email" type="email" />
-        <label for="firstname">Firstname</label>
+        <br>
+        <br>
+        <label for="firstname">Firstname : </label>
         <input name="firstname" type="text" />
-        <label for="lastname">Lastname</label>
+        <br>
+        <br>
+        <label for="lastname">Lastname : </label>
         <input name="lastname" type="text" />
-        <label for="password">Password</label>
+        <br>
+        <br>
+        <label for="password">Password : </label>
         <input name="password" type="password" />
+        <br>
+        <br>
+    <div class="signuppagebtn" style="text-align: center;">
         <input class="btn" type="submit" value="Sign Up" />
+        </div>
     </form>
+    </div>
+
+    </div>
  
-</body>
- 
-</html>

@@ -1,6 +1,4 @@
-.header {
 
-}
 
 .indexleft {
   width: 40%;
@@ -45,8 +43,6 @@
   background-color: #0c53a9;
 }
 
-.homelogo {
-}
 
 .profileicon {
   padding-top: 90px;
@@ -139,4 +135,42 @@
 
 .billsicon {
   padding-right: 10px;
+}
+
+.break {
+  height: 100px;
+}
+
+
+.signupcontain {
+  background-color: #0c53a9;
+  font-family: "Prague";
+  border-style: solid;
+  border-width: 10px;
+  border-color: #0c53a9;
+  border-radius: 25px;
+  width: 800px;
+  height: 800px;
+}
+
+.signuphead {
+  color: white;
+  padding: 40px;
+  font-family: "Prague";
+  font-size: 32px;
+}
+
+
+.signupdatacontain {
+  font-size: 30px;
+  color: #0c53a9;
+  border-radius: 0px 0px 25px 25px;
+  width: 750px;
+  height: 630px;
+  background-color: white;
+}
+
+.signupdata {
+  padding: 40px;
+  padding-top: 80px;
 }
