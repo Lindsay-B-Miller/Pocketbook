@@ -85,7 +85,15 @@ module.exports = function(app) {
     //Display percents
     app.post("/api/percents", function(req, res) {
       req.body.userId = req.user[0].id
+      console.log(req.body)
+      // var testobj = {
+      //   id: 1,
+      //   source: "test",
+      //   percent: 11,
+      //   userId: 1
+      // };
       db.Percents.create(req.body).then(function(dbPercents) {
+        console.log(dbPercents);
         res.json(dbPercents);
       });
     });

@@ -9,6 +9,7 @@ var $percentList = $("#percent-list");
 var percentAPI = {
   savePercent: function(percent) {
       console.log("savePercent function ran")
+      console.log(percent);
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -49,9 +50,9 @@ var handleFormSubmit = function(event) {
     source: $("#inputPercentSource")
       .val()
       .trim(),
-    percent: $("#inputPercentPercent")
+    percent: parseFloat($("#inputPercentPercent")
       .val()
-      .trim()
+      .trim())
   };
 
   if (!(percent.source && percent.percent)) {
