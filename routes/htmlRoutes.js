@@ -21,7 +21,9 @@ module.exports = function (app, passport) {
   );
 
   app.get("/dashboard", isLoggedIn, function (req, res) {
-    db.Income.findAll({}).then(function (dbIncome) {
+    db.Income.findAll({
+      where: { userId: req.user[0].id }
+    }).then(function (dbIncome) {
       res.render("dashboard", {
         income: dbIncome
       });
@@ -29,7 +31,9 @@ module.exports = function (app, passport) {
   });
 
   app.get("/income", isLoggedIn, function (req, res) {
-    db.Income.findAll({}).then(function (dbIncome) {
+    db.Income.findAll({
+      where: { userId: req.user[0].id }
+    }).then(function (dbIncome) {
       res.render("income", {
         income: dbIncome
       });
@@ -38,7 +42,9 @@ module.exports = function (app, passport) {
 
 
   app.get("/bills", isLoggedIn, function (req, res) {
-    db.Bills.findAll({}).then(function (dbBills) {
+    db.Bills.findAll({
+      where: { userId: req.user[0].id }
+    }).then(function (dbBills) {
       res.render("bills", {
         bill: dbBills
       });
@@ -46,7 +52,9 @@ module.exports = function (app, passport) {
   });
 
   app.get("/percents", isLoggedIn, function (req, res) {
-    db.Percents.findAll({}).then(function (dbPercents) {
+    db.Percents.findAll({
+      where: { userId: req.user[0].id }
+    }).then(function (dbPercents) {
       res.render("percents", {
         percent: dbPercents
       });
