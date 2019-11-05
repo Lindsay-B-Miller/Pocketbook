@@ -1,3 +1,21 @@
+<a href="/dashboard">
+<div class="header">
+  <div class="homelogo" style="text-align: center;">
+    <img src="/img/pocketbooklogo.png" style="height: 140px;">
+    <div class="profileicon">
+      <div class="dropdown">
+        <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a href="#" class="dropdown-item">Profile</a>
+          <a href="#" class="dropdown-item">Preferences</a>
+          <a href="/logout" class="dropdown-item">Sign Out</a>
+        </div>
+      </div>
+    </div>
+</a>
+
+
 <div class="container" id="inputPB" >
        <!-- Percents -->
        <br>
@@ -23,17 +41,18 @@
        <br>
    </div>
 
-
+<div class="container">
 <h3>Categories:</h3>
 <ul id="percents-list" class="list-group">
   {{#each percent}}
   <li data-id="{{this.id}}" class="list-group-item">
     {{source}}
-    {{amount}}
+    <span class="percentVal">{{percent}}</span>%
     <button class="btn btn-danger float-right delete">ｘ</button>
   </li>
   {{/each}}
 </ul>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </div>
   <script src="/js/percents.js"></script>

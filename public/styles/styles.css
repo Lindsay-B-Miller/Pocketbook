@@ -12,7 +12,8 @@
 }
 
 .homelogo {
-  padding: 40px;
+  background-color: #0c53a9;
+  height: 190px;
 }
 
 .logoImage {
@@ -248,9 +249,11 @@
   margin-top: 50px;
   border: 10px solid #0c53a9;
   border-radius: 25px;
-  /* float: left;
+  float: left;
 }
 
+
+/*
 label {
   font-size: 12px;
   color: white;
@@ -284,4 +287,5 @@ input {
   border-bottom: 1px solid white;
   text-align: center;
   color: white;
-} 
+}
+*/
