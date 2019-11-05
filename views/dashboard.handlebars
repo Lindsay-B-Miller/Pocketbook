@@ -8,15 +8,13 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
           <a href="#" class="dropdown-item">Profile</a>
           <a href="#" class="dropdown-item">Preferences</a>
-          <a href="#" class="dropdown-item">Sign Out</a>
+          <a href="/logout" class="dropdown-item">Sign Out</a>
         </div>
       </div>
     </div>
 
     <div class="welcome">
-      {{#each user}}
-      <h1>Welcome Back, {{firstname}}</h1>
-      {{/each}}
+      <h1>Welcome back, {{firstName}}</h1>
     </div>
 
 
@@ -94,10 +92,9 @@
           {{!-- Test income data --}}
           <h3>Income:</h3>
           <ul id="income-list" class="list-group">
-            {{#each income}}
+            {{#each budget}}
             <li data-id="{{this.id}}" class="list-group-item">
-              {{source}}
-              {{amount}}
+              {{budget_allocated}}
               <button class="btn btn-danger float-right delete">ｘ</button>
             </li>
             {{/each}}
