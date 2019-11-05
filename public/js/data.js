@@ -6,9 +6,9 @@ var $incomeAmount = $("#inputIncomeAmount");
 var $incomeList = $("#income-list");
 
 // The API object contains methods for each kind of request we'll make
-var API = {
-  saveIncome: function(income) {
-      console.log("saveIncome function ran")
+var incomeAPI = {
+  saveIncome: function (income) {
+    console.log("saveIncome function ran")
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -18,14 +18,14 @@ var API = {
       data: JSON.stringify(income)
     });
   },
-  getIncome: function() {
-      console.log("get income function ran")
+  getIncome: function () {
+    console.log("get income function ran")
     return $.ajax({
       url: "api/income",
       type: "GET"
     });
   },
-  deleteIncome: function(id) {
+  deleteIncome: function (id) {
     return $.ajax({
       url: "api/income/" + id,
       type: "DELETE"
@@ -34,14 +34,14 @@ var API = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshIncome = function() {
+var refreshIncome = function () {
   location.reload();
-    }
+}
 
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
   console.log("handleFormSubmit function ran")
 
@@ -59,22 +59,22 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveIncome(income).then(function() {
-      refreshIncome();
+  incomeAPI.saveIncome(income).then(function () {
+    refreshIncome();
   });
-  
+
   $incomeSource.val("");
   $incomeAmount.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteIncome(idToDelete).then(function() {
+  incomeAPI.deleteIncome(idToDelete).then(function () {
     refreshIncome();
   });
 };
