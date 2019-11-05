@@ -70,7 +70,9 @@ module.exports = function (app) {
 
   //Get all percents
   app.get("/api/percents", function (req, res) {
-    db.Percents.findAll({}).then(function (dbPercents) {
+    db.Percents.findAll({
+      where: { userId: req.user[0].id }
+    }).then(function (dbPercents) {
       res.json(dbPercents);
     });
   });
