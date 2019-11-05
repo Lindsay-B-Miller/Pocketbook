@@ -29,11 +29,13 @@ module.exports = function (app, passport) {
       bill.total_bills,
       p.percent,
       p.source,
-      income.firstname
+      income.firstname,
+      income.lastname
       FROM (
       SELECT  u.id, SUM(i.amount) AS "total_income",
 
-      u.firstname
+      u.firstname,
+      u.lastname
       FROM users u
       LEFT JOIN Incomes i 
       ON u.id = i.userID
@@ -62,6 +64,7 @@ module.exports = function (app, passport) {
       res.render("dashboard", {
         budget: budgetAllocation,
         firstName: budgetAllocation[0].firstname,
+        lastName: budgetAllocation[0].lastname,
         sourceArray: sourceArray
       });
     });
