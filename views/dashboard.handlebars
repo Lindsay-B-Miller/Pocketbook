@@ -83,24 +83,20 @@
       <div class="chartdata">
 
         <div class="datahead" style="text-align: center;">
-          <h1>Data</h1>
+          <h1>Monthly Budget</h1>
         </div>
 
 
         <div class="datainfo">
 
-          {{!-- Test income data --}}
-          <h3>Income:</h3>
           <ul id="income-list" class="list-group">
             {{#each budget}}
             <li data-id="{{this.id}}" class="list-group-item">
+              {{source}}
               {{budget_allocated}}
-              <button class="btn btn-danger float-right delete">ｘ</button>
             </li>
             {{/each}}
           </ul>
-
-          <h3>Total Income: </h3>
 
 
         </div>
