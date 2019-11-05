@@ -7,9 +7,8 @@ var $percentList = $("#percents-list");
 
 // The API object contains methods for each kind of request we'll make
 var percentAPI = {
-  savePercent: function(percent) {
-      console.log("savePercent function ran")
-      console.log(percent);
+  savePercent: function (percent) {
+    console.log("savePercent function ran")
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -19,14 +18,14 @@ var percentAPI = {
       data: JSON.stringify(percent)
     });
   },
-  getPercent: function() {
-      console.log("get percent function ran")
+  getPercent: function () {
+    console.log("get percent function ran")
     return $.ajax({
       url: "api/percents",
       type: "GET"
     });
   },
-  deletePercent: function(id) {
+  deletePercent: function (id) {
     return $.ajax({
       url: "api/percents/" + id,
       type: "DELETE"
@@ -35,14 +34,14 @@ var percentAPI = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshPercents = function() {
+var refreshPercents = function () {
   location.reload();
-    }
+}
 
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
   console.log("handleFormSubmit function ran")
 
@@ -59,23 +58,34 @@ var handleFormSubmit = function(event) {
     alert("You must enter a category and percent.");
     return;
   }
+  var values = $(".percentVal");
+  var totalPercent = 0;
+  for (i = 0; i < values.length; i++) {
+    totalPercent += parseFloat(values[i].innerHTML)
+  }
+  console.log("TOTAL PERCENT: " + totalPercent);
 
-  percentAPI.savePercent(percent).then(function() {
+  if (totalPercent + percent.percent <= 100) {
+    percentAPI.savePercent(percent).then(function () {
       refreshPercents();
-  });
-  
+    });
+  }
+  else {
+    alert("You are allocating over 100% of your budget. Please adjust your spending.")
+  }
+
   $percentSource.val("");
   $percentAmount.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  percentAPI.deletePercent(idToDelete).then(function() {
+  percentAPI.deletePercent(idToDelete).then(function () {
     refreshPercents();
   });
 };
