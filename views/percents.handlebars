@@ -1,29 +1,47 @@
-<div class="container" id="inputPB">
-  <!-- Percents -->
-  <br>
-  <div class="row">
-    <div class="col">
-      <h2>Input the percent of your remaining income you would like to spend</h2>
+<a href="/dashboard">
+<div class="header">
+  <div class="homelogo" style="text-align: center;">
+    <img src="/img/pocketbooklogo.png" style="height: 140px;">
+    <div class="profileicon">
+      <div class="dropdown">
+        <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a href="#" class="dropdown-item">Profile</a>
+          <a href="#" class="dropdown-item">Preferences</a>
+          <a href="/logout" class="dropdown-item">Sign Out</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <label>Percent allocated</label><br />
-      <input type="number" id="inputPercentPercent" />
-      <br><br>
-      <label>Category (ex: groceries, eating out, shopping)</label><br />
-      <input type="text" id="inputPercentSource" />
-      <br>
-      <br>
-      <h5>Add new category</h5>
-      <button type="button" class="btn btn-white" id="submitPercent">Add it here</button>
-    </div>
-  </div>
-  <br>
-  <br>
-</div>
+</a>
 
 
+<div class="container" id="inputPB" >
+       <!-- Percents -->
+       <br>
+       <div class="row">
+           <div class="col">
+               <h2>Input the percent of your remaining income you would like to spend</h2>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col">
+               <label>Percent allocated</label><br />
+               <input type="number" id="inputPercentPercent"/>
+               <br><br>
+               <label>Category (ex: groceries, eating out, shopping)</label><br/>
+               <input type="text" id="inputPercentSource"/>
+               <br>
+               <br>
+               <h5>Add new category</h5>
+               <button type="button" class="btn btn-white" id="submitPercent">Add it here</button>
+           </div>
+       </div>
+       <br>
+       <br>
+   </div>
+
+<div class="container">
 <h3>Categories:</h3>
 <ul id="percents-list" class="list-group">
   {{#each percent}}
@@ -36,4 +54,5 @@
 </ul>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/percents.js"></script>
+  </div>
+  <script src="/js/percents.js"></script>
