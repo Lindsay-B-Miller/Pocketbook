@@ -72,7 +72,10 @@
   margin-left: 250px;
 }
 
-.homelogo {}
+.homelogo {
+  height: 190px;
+  background-color: #0c53a9;
+}
 
 .profileicon {
   padding-top: 90px;
@@ -163,15 +166,46 @@
   background-color: white;
 }
 
-.billsicon {
-  padding-right: 10px;
+.break {
+  height: 100px;
 }
 
+.signupcontain {
+  background-color: #0c53a9;
+  font-family: "Prague";
+  border-style: solid;
+  border-width: 10px;
+  border-color: #0c53a9;
+  border-radius: 25px;
+  width: 800px;
+  height: 800px;
+}
+
+.signuphead {
+  color: white;
+  padding: 40px;
+  font-family: "Prague";
+  font-size: 32px;
+}
+
+
+.signupdatacontain {
+  font-size: 30px;
+  color: #0c53a9;
+  border-radius: 0px 0px 25px 25px;
+  width: 750px;
+  height: 630px;
+  background-color: white;
+}
+
+.signupdata {
+  padding: 40px;
+  padding-top: 80px;
+}
 /* income page */
 html,
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  background: #0c53a9;
   text-align: center;
   color: black;
 }
