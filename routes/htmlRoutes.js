@@ -44,11 +44,15 @@ module.exports = function (app, passport) {
        ON subquery.id = p.userId`,
       { replacements: [req.user[0].id], type: sequelize.QueryTypes.SELECT }
     ).then(function (budgetAllocation) {
+      var sourceArray = [];
       console.table(budgetAllocation)
+      for (i = 0; i < budgetAllocation.length; i++) {
+        sourceArray.push(budgetAllocation[i].source)
+      }
       res.render("dashboard", {
         budget: budgetAllocation,
-        firstName: budgetAllocation[0].firstname
-
+        firstName: budgetAllocation[0].firstname,
+        sourceArray: sourceArray
       });
     });
   });
