@@ -26,6 +26,7 @@ module.exports = function (app, passport) {
       `SELECT TRUNCATE(p.percent/100,2) AS "percent_of_budget", TRUNCATE(((p.percent/100) * subquery.net_income),2) AS "budget_allocated",
       subquery.net_income,
       p.percent,
+      p.source,
       subquery.firstname
       FROM (
       SELECT u.id, SUM(i.amount) AS "total_income",
@@ -33,13 +34,13 @@ module.exports = function (app, passport) {
       SUM(i.amount) - SUM(b.amount) AS "net_income",
       u.firstname
       FROM users u
-      INNER JOIN Incomes i 
+      LEFT JOIN Incomes i 
       ON u.id = i.userID
-      INNER JOIN Bills b
+      LEFT JOIN Bills b
       ON u.id = b.userId
       where u.id = ?
       ) as subquery
-       inner JOIN Percents p
+       LEFT JOIN Percents p
        ON subquery.id = p.userId`,
       { replacements: [req.user[0].id], type: sequelize.QueryTypes.SELECT }
     ).then(function (budgetAllocation) {
