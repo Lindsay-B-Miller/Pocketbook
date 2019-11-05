@@ -1,4 +1,4 @@
-<div class="header">
+{{!-- <div class="header">
   <div class="homelogo" style="text-align: center;">
     <img src="/img/pocketbooklogo.png" style="height: 140px;">
     <div class="profileicon">
@@ -92,4 +92,105 @@
     </div>
 
     <script src="/js/data.js"></script>
-    <script src="/js/chart.js"></script>
+    <script src="/js/chart.js"></script> --}}
+
+<div class="homelogo" style="text-align: center;">
+  <img src="/img/pocketbooklogo.png" style="height: 140px;">
+  <div class="profileicon">
+    <div class="dropdown">
+      <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <a href="#" class="dropdown-item">Profile</a>
+        <a href="#" class="dropdown-item">Preferences</a>
+        <a href="/logout" class="dropdown-item">Sign Out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="welcome">
+    <h1>Welcome back, {{firstName}}</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="dashleft">
+
+        <div class="monthselect" style="text-align: center;">
+          <h1>October</h1>
+        </div>
+
+
+        <div class="chart">
+          <div class="container">
+            <canvas id="myChart" width="630" height="630"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="chartdata">
+
+        <div class="datahead" style="text-align: center;">
+          <h1>Monthly Budget</h1>
+        </div>
+
+
+        <div class="datainfo">
+
+          <ul id="income-list" class="list-group">
+            {{#each budget}}
+            <li data-id="{{this.id}}" class="list-group-item">
+              {{source}}
+              ${{budget_allocated}}
+            </li>
+            {{/each}}
+          </ul>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="optionstab" style="text-align: center;">
+
+        <div class="incomeicon">
+          <a href="income">
+            <input type="image" src="/img/INCOME.jpg" style="height: 130px; width: 130px;">
+            <p>Income</p>
+          </a>
+        </div>
+
+        <br>
+
+
+        <div class="billsicon">
+          <a href="bills">
+            <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 148px;">
+            <p>Bills</p>
+          </a>
+        </div>
+
+        <br>
+
+
+        <div class="percentsicon">
+          <a href="percents">
+            <input type="image" src="/img/PERCENT.png" style="height: 100px; width: 100px;">
+            <p>Percents</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/data.js"></script>
+<script src="/js/chart.js"></script>

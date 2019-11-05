@@ -47,8 +47,6 @@
           <div class="container">
             <h3>Income:</h3>
 
-            <br>
-
             <ul id="income-list" class="list-group">
               {{#each income}}
               <li data-id="{{this.id}}" class="list-group-item income-item">
@@ -71,20 +69,29 @@
             </a>
           </div>
 
-          <br>
+          <div class="optionstab" style="text-align: center;">
+
+            <div class="incomeicon">
+              <a href="income">
+                <input type="image" src="/img/INCOME.jpg" style="height: 130px; width: 130px;">
+                <p>Income</p>
+              </a>
+            </div>
+
+            <br>
 
 
-          <div class="billsicon">
-            <a href="bills">
-              <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 150px;">
-              <p>Bills</p>
-            </a>
+            <div class="billsicon">
+              <a href="bills">
+                <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 150px;">
+                <p>Bills</p>
+              </a>
+            </div>
           </div>
         </div>
+
+
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/js/data.js"></script>
       </div>
-
-
-
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="/js/data.js"></script>
-    </div>

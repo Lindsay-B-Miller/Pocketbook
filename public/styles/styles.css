@@ -73,7 +73,7 @@
   margin-left: 250px;
 }
 
-/* DASHBOARD */
+/* dashboard */
 
 .homelogo {
   height: 190px;
@@ -81,7 +81,7 @@
 }
 
 .profileicon {
-  padding-top: 90px;
+  /* padding-top: 90px; */
   float: right;
 }
 
@@ -97,11 +97,11 @@
 }
 
 .dashleft {
-  padding-top: 10px;
+  /* padding-top: 40px;
   padding-left: 40px;
-  padding-bottom: 40px;
-  float: left;
-  width: 55%;
+  padding-bottom: 40px; 
+  float: left; 
+  width: 55%; */
   height: 900px;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .chart {
-  padding: 40px;
+  /* padding: 40px; */
   height: 750px;
   background-color: white;
   border-style: solid;
@@ -125,11 +125,11 @@
 }
 
 .chartdata {
-  padding-top: 10px;
-  padding-right: 40px;
-  padding-bottom: 40px;
-  width: 35%;
-  float: left;
+  /* padding-top: 40px; */
+  /* padding-right: 40px; */
+  /* padding-bottom: 40px; */
+  /* width: 35%; */
+  /* float: left; */
   height: 900px;
 }
 
@@ -147,26 +147,26 @@
   background-color: white;
   border-style: solid;
   border-top: none;
-  border-left: none;
+  /* border-left: none; */
   border-width: 20px;
   border-color: #0c53a9;
 }
 
 .optionstab {
   font-family: "Prague";
-  font-size: 20px;
-  color: #0c53a9;
+  /* font-size: 20px;
+  color: #0c53a9; */
   border-style: solid;
   border-width: 5px;
   border-color: #0c53a9;
-  padding-right: 20px;
+  /* padding-right: 20px; */
   padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px;
   padding-left: 16px;
   float: right;
-  width: 10%;
-  height: 850px;
-  background-color: white;
+  width: 8%; */
+  height: 845px;
+  /* background-color: white; */
 }
 
 /* SIGN UP :3 */
