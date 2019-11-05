@@ -1,6 +1,4 @@
 $.get("/api/percents", function (res) {
-    // if (err) throw err;
-    console.log(res);
     var labels = [];
     var data = [];
     for (i = 0; i < res.length; i++) {
@@ -9,6 +7,8 @@ $.get("/api/percents", function (res) {
     for (i = 0; i < res.length; i++) {
         data.push(res[i].percent)
     }
+
+
     let myChart = document.getElementById('myChart').getContext('2d');
 
     let massPopChart = new Chart(myChart, {
