@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<a href="/dashboard">
->>>>>>> master
 <div class="header">
   <div class="homelogo" style="text-align: center;">
     <img src="/img/pocketbooklogo.png" style="height: 140px;">
@@ -16,93 +12,79 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
 
-<div class="break"></div>
+    <div class="break"></div>
 
-<div class="incomewrap">
+    <div class="incomewrap">
 
-<div class="incomecont" style="margin: 0 auto;">
+      <div class="incomecont" style="margin: 0 auto;">
 
-  <div class="incomeform">
-=======
-</a>
-
-  {{!-- <h1>add homebutton please!! --pocketbook logo interactive button--</h1> --}}
-  
-  
-<div class="container" id="inputPB">
->>>>>>> master
-  <!-- Income -->
-    <div class="row">
-    <div class="formhead" style="margin: 0 auto;">
-      <h2>Add Your Current Income</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col" style="padding-top: 10px;"
-      <label>Income Amount</label><br />
-      <input type="number" id="inputIncomeAmount" />
-      <br><br>
-      <label>Income Source</label><br />
-      <input type="text" id="inputIncomeSource" />
-      <br>
-      <br>
-      <h5>Have another source of income?</h5>
-      <button type="button" class="btn btn-white" id="submitIncome">Add it here</button>
-    </div>
-  </div>
-  <br>
-  <br>
-  </div>
-
-<<<<<<< HEAD
-<div class="incomeresult" style="margin: 0 auto;">
-=======
-<br><br>
->>>>>>> master
-
-<div class="container">
-<h3>Income:</h3>
-
-<br>
-
-<ul id="income-list" class="list-group">
-  {{#each income}}
-  <li data-id="{{this.id}}" class="list-group-item income-item">
-    {{source}}
-    {{amount}}
-    <button class="btn btn-danger float-right delete">ｘ</button>
-  </li>
-  {{/each}}
-</ul>
-
-</div>
-</div>
-
-<div class="optionstab" style="text-align: center;">
-
-        <div class="incomeicon">
-          <a href="income">
-            <input type="image" src="/img/INCOME.jpg" style="height: 130px; width: 130px;">
-            <p>Income</p>
-          </a>
+        <div class="incomeform">
+          <!-- Income -->
+          <div class="row">
+            <div class="formhead" style="margin: 0 auto;">
+              <h2>Add Your Current Income</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" style="padding-top: 10px;" <label>Income Amount</label><br />
+              <input type="number" id="inputIncomeAmount" />
+              <br><br>
+              <label>Income Source</label><br />
+              <input type="text" id="inputIncomeSource" />
+              <br>
+              <br>
+              <h5>Have another source of income?</h5>
+              <button type="button" class="btn btn-white" id="submitIncome">Add it here</button>
+            </div>
+          </div>
+          <br>
+          <br>
         </div>
 
-        <br>
+        <div class="incomeresult" style="margin: 0 auto;">
+
+          <div class="container">
+            <h3>Income:</h3>
+
+            <br>
+
+            <ul id="income-list" class="list-group">
+              {{#each income}}
+              <li data-id="{{this.id}}" class="list-group-item income-item">
+                {{source}}
+                {{amount}}
+                <button class="btn btn-danger float-right delete">ｘ</button>
+              </li>
+              {{/each}}
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="optionstab" style="text-align: center;">
+
+          <div class="incomeicon">
+            <a href="income">
+              <input type="image" src="/img/INCOME.jpg" style="height: 130px; width: 130px;">
+              <p>Income</p>
+            </a>
+          </div>
+
+          <br>
 
 
-        <div class="billsicon">
-          <a href="bills">
-            <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 150px;">
-            <p>Bills</p>
-          </a>
+          <div class="billsicon">
+            <a href="bills">
+              <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 150px;">
+              <p>Bills</p>
+            </a>
+          </div>
         </div>
       </div>
-</div>
 
-    
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/data.js"></script>
-</div>
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="/js/data.js"></script>
+    </div>
