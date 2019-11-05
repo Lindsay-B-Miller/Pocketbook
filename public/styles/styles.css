@@ -75,9 +75,14 @@
 
 /* dashboard */
 
+#homelogoid {
+  margin-left: 43%
+}
+
 .homelogo {
   height: 190px;
   background-color: #0c53a9;
+  /* text-align: center; */
 }
 
 .profileicon {
@@ -86,7 +91,8 @@
 }
 
 .welcome {
-  font-family: "Prague";
+  /* font-family: "Prague"; */
+  font-family: 'Open Sans Condensed', sans-serif;
   padding-top: 30px;
   padding-right: 30px;
 }
