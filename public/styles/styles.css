@@ -1,5 +1,5 @@
+/* HOMEPAGE */
 .home {
-
   font-family: "Prague";
   background-color: #0c53a9;
 }
@@ -73,6 +73,8 @@
   margin-left: 250px;
 }
 
+/* DASHBOARD */
+
 .homelogo {
   height: 190px;
   background-color: #0c53a9;
@@ -85,7 +87,7 @@
 
 .welcome {
   font-family: "Prague";
-  padding-top: 20px;
+  padding-top: 30px;
   padding-right: 30px;
 }
 
@@ -95,7 +97,7 @@
 }
 
 .dashleft {
-  padding-top: 40px;
+  padding-top: 10px;
   padding-left: 40px;
   padding-bottom: 40px;
   float: left;
@@ -123,7 +125,7 @@
 }
 
 .chartdata {
-  padding-top: 40px;
+  padding-top: 10px;
   padding-right: 40px;
   padding-bottom: 40px;
   width: 35%;
@@ -162,13 +164,15 @@
   padding-bottom: 20px;
   padding-left: 16px;
   float: right;
-  width: 8%;
-  height: 870px;
+  width: 10%;
+  height: 850px;
   background-color: white;
 }
 
+/* SIGN UP :3 */
+
 .break {
-  height: 100px;
+  height: 60px;
 }
 
 .signupcontain {
@@ -203,28 +207,51 @@
   padding: 40px;
   padding-top: 80px;
 }
-/* income page */
-html,
-body {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: black;
+
+/* INCOME PAGE */
+
+.incomewrap {
+  padding: 20px;
 }
 
-.percentsIMG {
-  /* position: fixed;
-  top: 50%;
-  left: 90%; */
-  height: 90px;
-  width: 90px;
-}
-
-#inputPB {
-  margin-top: 50px;
-  border: 5px solid white;
+.incomecont {
+  float: left;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #0c53a9;
   border-radius: 25px;
-  /* float: left; */
+  width: 85%;
+  padding-bottom: 40px;
 }
+
+.incomeform {
+  font-family: "Prague";
+  font-weight: bold;
+  font-size: 30px;
+  background-color: white;
+}
+
+.formhead {
+  background-color: #0c53a9;
+  color: white;
+  width: 99%;
+  padding: 10px;
+}
+
+.incomeresult {
+  font-family: "Prague";
+  font-weight: bold;
+  font-size: 30px;
+  width: 60%;
+}
+/*#inputPB {
+  width: 40%;
+  margin-top: 50px;
+  border: 10px solid #0c53a9;
+  border-radius: 25px;
+  float: left;
+}
+
 
 /*
 label {
