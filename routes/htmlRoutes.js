@@ -23,26 +23,36 @@ module.exports = function (app, passport) {
 
   app.get("/dashboard", isLoggedIn, function (req, res) {
     db.sequelize.query(
-      `SELECT TRUNCATE(p.percent/100,2) AS "percent_of_budget", TRUNCATE(((p.percent/100) * subquery.net_income),2) AS "budget_allocated",
-      subquery.net_income,
+      `SELECT TRUNCATE(p.percent/100,2) AS "percent_of_budget", 
+      TRUNCATE(((p.percent/100) * (income.total_income - bill.total_bills)),2) AS "budget_allocated",
+      income.total_income,
+      bill.total_bills,
       p.percent,
       p.source,
-      subquery.firstname
+      income.firstname
       FROM (
-      SELECT u.id, SUM(i.amount) AS "total_income",
-      SUM(b.amount) AS "total_bills",
-      SUM(i.amount) - SUM(b.amount) AS "net_income",
+      SELECT  u.id, SUM(i.amount) AS "total_income",
+
       u.firstname
       FROM users u
       LEFT JOIN Incomes i 
       ON u.id = i.userID
+      where u.id = ?
+      ) as income
+      left join 
+      
+      (
+      SELECT u.id, 
+        SUM(b.amount) AS "total_bills"
+      FROM users u
       LEFT JOIN Bills b
       ON u.id = b.userId
       where u.id = ?
-      ) as subquery
+      ) as bill on income.id = bill.id
+      
        LEFT JOIN Percents p
-       ON subquery.id = p.userId`,
-      { replacements: [req.user[0].id], type: sequelize.QueryTypes.SELECT }
+       ON income.id = p.userId`,
+      { replacements: [req.user[0].id, req.user[0].id], type: sequelize.QueryTypes.SELECT }
     ).then(function (budgetAllocation) {
       var sourceArray = [];
       console.table(budgetAllocation)
