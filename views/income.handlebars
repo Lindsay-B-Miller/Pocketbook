@@ -1,66 +1,79 @@
-<div class="header">
-  <div class="homelogo" style="text-align: center;">
-    <img src="/img/pocketbooklogo.png" style="height: 140px;">
-    <div class="profileicon">
-      <div class="dropdown">
-        <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <a href="#" class="dropdown-item">Profile</a>
-          <a href="#" class="dropdown-item">Preferences</a>
-          <a href="/logout" class="dropdown-item">Sign Out</a>
+<a href="/dashboard">
+  <div class="header">
+    <div class="homelogo" style="text-align: center;">
+      <img src="/img/pocketbooklogo.png" style="height: 140px;">
+      <div class="profileicon">
+        <div class="dropdown">
+          <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a href="#" class="dropdown-item">Profile</a>
+            <a href="#" class="dropdown-item">Preferences</a>
+            <a href="/logout" class="dropdown-item">Sign Out</a>
+          </div>
         </div>
       </div>
+</a>
+
+<div class="break"></div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="formhead" style="margin: 0 auto;">
+      <h2>Add Your Current Income</h2>
     </div>
+  </div>
 
-    <div class="break"></div>
+  <br>
 
-    <div class="incomewrap">
+  <div class="wrap">
 
-      <div class="incomecont" style="margin: 0 auto;">
+    <div class="cont" style="margin: 0 auto;">
 
-        <div class="incomeform">
-          <!-- Income -->
-          <div class="row">
-            <div class="formhead" style="margin: 0 auto;">
-              <h2>Add Your Current Income</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col" style="padding-top: 10px;" <label>Income Amount</label><br />
-              <input type="number" id="inputIncomeAmount" />
-              <br><br>
-              <label>Income Source</label><br />
-              <input type="text" id="inputIncomeSource" />
-              <br>
-              <br>
-              <h5>Have another source of income?</h5>
-              <button type="button" class="btn btn-white" id="submitIncome">Add it here</button>
-            </div>
-          </div>
-          <br>
-          <br>
-        </div>
-
-        <div class="incomeresult" style="margin: 0 auto;">
-
-          <div class="container">
-            <h3>Income:</h3>
-
-            <ul id="income-list" class="list-group">
-              {{#each income}}
-              <li data-id="{{this.id}}" class="list-group-item income-item">
-                {{source}}
-                {{amount}}
-                <button class="btn btn-danger float-right delete">ｘ</button>
-              </li>
-              {{/each}}
-            </ul>
-
+      <div class="form">
+        <!-- Income -->
+        <div class="row">
+          <div class="col"><label>Income Amount</label><br />
+            <input type="number" id="inputIncomeAmount" />
+            <br>
+            <br>
+            <label>Income Source</label><br />
+            <input type="text" id="inputIncomeSource" />
+            <br>
+            <br>
+            <h5>Have another source of income?</h5>
+            <button type="button" class="btn btn-white" id="submitIncome" style="background-color: #0c53a9;
+  color: white;">Add it here</button>
           </div>
         </div>
+        <br>
+        <br>
+      </div>
 
-        <div class="optionstab" style="text-align: center;">
+      <div class="result" style="margin: 0 auto;">
+      </div>
+
+      <div class="container">
+        <h3>Income:</h3>
+
+        <ul id="income-list" class="list-group">
+          {{#each income}}
+          <li data-id="{{this.id}}" class="list-group-item income-item">
+            {{source}}
+            {{amount}}
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- <div class="optionstab" style="text-align: center;">
 
           <div class="incomeicon">
             <a href="income">
@@ -88,10 +101,10 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> --}}
 
 
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="/js/data.js"></script>
-      </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/data.js"></script>
+</div>
