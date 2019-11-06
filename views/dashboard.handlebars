@@ -1,109 +1,59 @@
-{{!-- <div class="header">
-  <div class="homelogo" style="text-align: center;">
-    <img src="/img/pocketbooklogo.png" style="height: 140px;">
-    <div class="profileicon">
-      <div class="dropdown">
-        <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <a href="#" class="dropdown-item">Profile</a>
-          <a href="#" class="dropdown-item">Preferences</a>
-          <a href="/logout" class="dropdown-item">Sign Out</a>
-        </div>
-      </div>
-    </div>
+<div class="homelogo">
+  <img id="homelogoid" src="/img/pocketbooklogo.png" style="height: 140px;">
+  {{!-- <div class="profileicon">
+      <a href="/logout"><button type="button" class="btn btn-outline-light float-right">Sign out</button></a>
+    </div> --}}
+</div>
+<div class="page-content p-5" id="content">
 
+
+  <div class="container">
     <div class="welcome">
       <h1>Welcome back, {{firstName}}</h1>
     </div>
+  </div>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <div class="dashleft">
 
-      <div class="dashleft">
-
-        <div class="monthselect" style="text-align: center;">
-          <h1>October</h1>
-        </div>
-
-
-        <div class="chart">
-          <div class="container">
-            <canvas id="myChart" width="630" height="630"></canvas>
+          <div class="monthselect" style="text-align: center;">
+            <h1>Budget Breakdown</h1>
           </div>
 
 
-
-        </div>
-
-      </div>
-
-      <div class="chartdata">
-
-        <div class="datahead" style="text-align: center;">
-          <h1>Monthly Budget</h1>
-        </div>
-
-
-        <div class="datainfo">
-
-          <ul id="income-list" class="list-group">
-            {{#each budget}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              {{source}}
-              ${{budget_allocated}}
-            </li>
-            {{/each}}
-          </ul>
-
-
-        </div>
-
-      </div>
-
-      <div class="optionstab" style="text-align: center;">
-
-        <div class="incomeicon">
-          <a href="income">
-            <input type="image" src="/img/INCOME.jpg" style="height: 130px; width: 130px;">
-            <p>Income</p>
-          </a>
-        </div>
-
-        <br>
-
-
-        <div class="billsicon">
-          <a href="bills">
-            <input type="image" src="/img/BILLS.jpg" style="height: 140px; width: 150px;">
-            <p>Bills</p>
-          </a>
-        </div>
-
-<br>
-
-      <div class="percentsicon">
-          <a href="percents">
-            <input type="image" src="img/PERCENT.png" class="percentsIMG">
-            <p>Manage Budget</p>
-          </a>
+          <div class="chart">
+            <div class="container">
+              <canvas id="myChart" width="630" height="630"></canvas>
+            </div>
+          </div>
         </div>
       </div>
 
-      </div>
-    </div>
+      <div class="col-5">
+        <div class="chartdata">
 
-    <script src="/js/data.js"></script>
-    <script src="/js/chart.js"></script> --}}
+          <div class="datahead" style="text-align: center;">
+            <h1>Monthly Budget</h1>
+          </div>
 
-<div class="homelogo" style="text-align: center;">
-  <img src="/img/pocketbooklogo.png" style="height: 140px;">
-  <div class="profileicon">
-    <div class="dropdown">
-      <img src="/img/PROFILEICON.png" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-        <a href="#" class="dropdown-item">Profile</a>
-        <a href="#" class="dropdown-item">Preferences</a>
-        <a href="/logout" class="dropdown-item">Sign Out</a>
+
+          <div class="datainfo">
+
+            <ul id="income-list" class="list-group">
+              {{#each budget}}
+              <li data-id="{{this.id}}" class="list-group-item">
+                {{source}}
+                ${{budget_allocated}}
+              </li>
+              {{/each}}
+            </ul>
+
+
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -124,41 +74,49 @@
           <h1>My Budget</h1>
         </div>
 
-
-        <div class="chart">
-          <div class="container">
-            <canvas id="myChart" width="630" height="630"></canvas>
+    <!-- Vertical navbar -->
+    <div class="vertical-nav bg-white" id="sidebar">
+      <div class="py-4 px-3 mb-4 bg-light">
+        <div class="media d-flex align-items-center"><img src="/img/BILLS.jpg" alt="..." width="65"
+            class="mr-3 rounded-circle img-thumbnail shadow-sm">
+          <div class="media-body">
+            <h4 class="m-0">{{firstName}}
+              {{lastName}}</h4>
+            <p class="font-weight-light text-muted mb-0">Account</p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-4">
-      <div class="chartdata">
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Manage Budget</p>
 
-        <div class="datahead" style="text-align: center;">
-          <h1>Monthly Budget</h1>
-        </div>
+      <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="/income" class="nav-link text-dark font-italic bg-light">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+            Income
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/bills" class="nav-link text-dark font-italic">
+            <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+            Bills
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/percents" class="nav-link text-dark font-italic">
+            <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+            Budget Breakdown
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" class="nav-link text-dark font-italic">
+            <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+            Sign out
+          </a>
+        </li>
+      </ul>
 
-
-        <div class="datainfo">
-
-          <ul id="income-list" class="list-group">
-            {{#each budget}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              {{source}}
-              ${{budget_allocated}}
-            </li>
-            {{/each}}
-          </ul>
-
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="col-2">
+      {{!-- <div class="col-2">
       <div class="optionstab" style="text-align: center;">
 
 <br>
@@ -190,9 +148,9 @@
           </a>
         </div>
       </div>
+    </div> --}}
     </div>
   </div>
-</div>
 
-<script src="/js/data.js"></script>
-<script src="/js/chart.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/chart.js"></script>
