@@ -214,23 +214,23 @@
   padding-top: 80px;
 }
 
-/* INCOME PAGE */
+/* Model Pages */
 
-.incomewrap {
+.wrap {
   padding: 20px;
 }
 
-.incomecont {
-  float: left;
+.cont {
+  /* float: left; */
   border-style: solid;
   border-width: 10px;
   border-color: #0c53a9;
   border-radius: 25px;
   width: 85%;
-  padding-bottom: 40px;
+  padding: 40px;
 }
 
-.incomeform {
+.form {
   font-family: "Prague";
   font-weight: bold;
   font-size: 30px;
@@ -240,16 +240,18 @@
 .formhead {
   background-color: #0c53a9;
   color: white;
-  width: 99%;
+  width: 100%;
   padding: 10px;
+  border-radius: 25px;
 }
 
-.incomeresult {
+.result {
   font-family: "Prague";
   font-weight: bold;
   font-size: 30px;
   width: 60%;
 }
+
 /*#inputPB {
   width: 40%;
   margin-top: 50px;
